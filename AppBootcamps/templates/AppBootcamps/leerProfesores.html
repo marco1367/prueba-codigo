@@ -1,0 +1,25 @@
+{% extends "AppBootcamps/layout.html" %}
+
+{% load static %}
+
+{% block contenidoQueCmabia %}
+<section>
+    
+    <ul>
+
+        {% for profesor in profesores %}
+            <li>
+                {{profesor}}
+            </li>
+            <a href="{% url 'EliminarProfesor' profesor.nombre %}">Eliminar</a>
+            <a href="{% url 'EditarProfesor' profesor.nombre %}">Editar</a>
+        {% endfor %}
+
+    </ul>
+
+    <br><br>
+
+    <a href="/AppBootcamps/profesores">Agreagar profesor</a>
+
+</section>
+{% endblock %}

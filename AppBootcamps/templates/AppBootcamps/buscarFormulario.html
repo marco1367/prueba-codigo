@@ -1,0 +1,20 @@
+{% extends "AppBootcamps/layout.html" %}
+
+{% load static %}
+
+{% block contenidoQueCmabia %}
+<section>
+    <h1>Buscar por n° de Camada:</h1>
+
+    <br>
+
+    <form action="buscar" method="get">
+        <input type="number" name="camada" id="camada">
+
+        </br></br>
+
+        <input type="submit" value="Buscar">
+        <input type="reset" value="Limpiar formulario">
+    </form>
+</section>
+{% endblock %}

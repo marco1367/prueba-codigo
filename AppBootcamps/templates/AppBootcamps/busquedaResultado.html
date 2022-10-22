@@ -1,0 +1,41 @@
+{% extends "AppBootcamps/layout.html" %}
+
+{% load static %}
+
+{% block contenidoQueCmabia %}
+<section>
+    <h1>Resultados de Busqueda de la camada: {{camada}}</h1>
+
+    <br>
+
+    {% if cursos %}
+    
+        {% for curso in cursos %}
+
+            <div>
+                <div>
+                    <p>Nombre: {{curso.nombre}}</p>
+                </div>
+                <div>
+                    <p>Camada: {{curso.camada}}</p>
+                </div>
+            </div>
+
+            <br><br>
+
+        {% endfor %}
+
+    {% elif not respuesta %}
+
+        <div>
+            <p>No hay Cursos con el n° de camada introducido.</p>
+        </div>
+
+    {% else %}
+
+        <p style="color: red;" > {{respuesta}} </p>
+    
+    {% endif %}
+
+</section>
+{% endblock %}
